@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-  ],
+, "data/get_categories.ts", "data/create_db.mjs", "data/conection_db.ts"  ],
   "exclude": ["node_modules"]
 }
