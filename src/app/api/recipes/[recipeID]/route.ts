@@ -3,11 +3,11 @@ import { NextResponse } from "next/dist/server/web/spec-extension/response";
 
 export async function GET(
     request: Request,
-    { params }: { params: Promise<{ recipeID: number }>}
+    { params }: { params: Promise<{ recipeID: string }> }
 ) {
-    
-    const recipeID = (await params).recipeID;
-    const recipe = await getRecipe(recipeID);
+    const recipeIDStr = (await params).recipeID;
+    const recipeIDNum = Number(recipeIDStr);
+    const recipe = await getRecipe(recipeIDNum);
     return NextResponse.json(recipe);
 }
 
